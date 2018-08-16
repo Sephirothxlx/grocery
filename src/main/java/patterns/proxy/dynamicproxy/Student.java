@@ -1,4 +1,4 @@
-package patterns.proxy.staticproxy;
+package patterns.proxy.dynamicproxy;
 
 public class Student implements Person{
 
