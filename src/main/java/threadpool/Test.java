@@ -1,5 +1,6 @@
 package threadpool;
 
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -13,6 +14,11 @@ public class Test {
 		Test tt=new Test();
 		t.execute(new Test.Task());
 		t.execute(tt.new Task2());
+		
+		
+		ExecutorService t2=Executors.newSingleThreadExecutor();
+		t2.execute(new Test.Task());
+		t2.execute(new Test.Task());
 	}
 	
 	static class Task implements Runnable{
@@ -21,6 +27,8 @@ public class Test {
 			// TODO Auto-generated method stub
 			System.out.println("lalala!");
 		}
+		
+		
 		
 	}
 	class Task2 implements Runnable{
